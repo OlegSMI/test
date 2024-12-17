@@ -19,12 +19,14 @@ const router = useRouter();
         text="Бронирования еды и столов"
         @click="router.push({ name: RouteName.KITCHEN_ROOT })"
       />
-      <RouterItem
+      <a href="https://concierge-store.pages.dev/" target="_blank" rel="noopener noreferrer">
+        <RouterItem
         :img="storeRouterIcon"
         title="Store"
         text="Внутренний маркетплейс"
-        @click="window.open('https://concierge-store.pages.dev/', '_blank')"
       />
+    </a>
+      
       <RouterItem
         :img="taskRouterIcon"
         title="Task"
