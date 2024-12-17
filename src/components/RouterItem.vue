@@ -3,18 +3,17 @@ defineProps<{
   img: string;
   title: string;
   text: string;
-  route: string;
 }>();
 </script>
 
 <template>
-  <router-link :to="route" class="router">
+  <div class="bg-tertiary">
     <img :src="img" alt="" />
     <div class="description">
       <p class="title">{{ title }}</p>
       <p class="text">{{ text }}</p>
     </div>
-  </router-link>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -22,7 +21,6 @@ defineProps<{
   display: flex;
   align-items: center;
   padding: 16px;
-  background-color: var(--tertiary-fill-background);
   color: var(--text-color);
   border-radius: 12px;
   text-decoration: none;
