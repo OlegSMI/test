@@ -22,7 +22,7 @@ const routerItems = [
     img: taskRouterIcon,
     title: "Task",
     text: "",
-    route: { name: RouteName.TASK_SELECT_TOPIC })",
+    route: { name: RouteName.TASK_SELECT_TOPIC },
   },
 
 ];
