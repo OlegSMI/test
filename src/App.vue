@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { RouterView, useRoute, useRouter } from "vue-router";
+import TheLoader from "@/components/TheLoader.vue";
+import UITransition from "@/components/ui/UITransition/UITransition.vue";
+import { useWebApp } from "@/composables/useWebApp";
+import { RouteName } from "@/constants/route_name";
+import { useAppStore } from "@/store/app";
 import { useCatalogStore } from "@/store/catalog";
 import { useCheckoutStore } from "@/store/checkout";
 import { useOrderStore } from "@/store/order";
-import { computed, onBeforeMount, ref, toRefs, watchEffect } from "vue";
-import TheLoader from "@/components/TheLoader.vue";
-import { useWebApp } from "@/composables/useWebApp";
 import { useUserStore } from "@/store/user";
-import { useAppStore } from "@/store/app";
-import { RouteName } from "@/constants/route_name";
-import UITransition from "@/components/ui/UITransition/UITransition.vue";
+import { computed, onBeforeMount, ref, toRefs, watchEffect } from "vue";
+import { RouterView, useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
@@ -60,13 +60,14 @@ watchEffect(() => {
   if (isInitDataFinished.value && !isReady.value) {
     isReady.value = true;
     if (route.fullPath.includes("#tg")) {
-      if (hasAccessCount.value === 0) {
-        void router.push({ name: RouteName.NOT_ACCESS }).then(() => {
-          setTimeout(() => {
-            appStore.setReady(true);
-          }, 300);
-        });
-      } else if (showBirthdayOnboard.value) {
+      // if (hasAccessCount.value === 0) {
+      //   void router.push({ name: RouteName.NOT_ACCESS }).then(() => {
+      //     setTimeout(() => {
+      //       appStore.setReady(true);
+      //     }, 300);
+      //   });
+      // } else 
+      if (showBirthdayOnboard.value) {
         void router.push({ name: RouteName.BIRTHDAY }).then(() => {
           setTimeout(() => {
             appStore.setReady(true);
