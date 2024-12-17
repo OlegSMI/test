@@ -4,10 +4,12 @@ import storeRouterIcon from "@/components/icons/svg/storeRouterIcon.svg";
 import taskRouterIcon from "@/components/icons/svg/taskRouterIcon.svg";
 import RouterItem from "@/components/RouterItem.vue";
 import { RouteName } from "@/constants/route_name";
+import { initUtils } from "@tma.js/sdk";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 
+const utils = initUtils();
 
 </script>
 
@@ -19,13 +21,12 @@ const router = useRouter();
         text="Бронирования еды и столов"
         @click="router.push({ name: RouteName.KITCHEN_ROOT })"
       />
-      <a href="https://concierge-store.pages.dev/" target="_blank" rel="noopener noreferrer">
-        <RouterItem
+      <RouterItem
         :img="storeRouterIcon"
         title="Store"
         text="Внутренний маркетплейс"
+        @click="utils.openLink('https://concierge-store.pages.dev/')"
       />
-    </a>
       
       <RouterItem
         :img="taskRouterIcon"
