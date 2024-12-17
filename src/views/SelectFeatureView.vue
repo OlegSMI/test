@@ -4,37 +4,36 @@ import storeRouterIcon from "@/components/icons/svg/storeRouterIcon.svg";
 import taskRouterIcon from "@/components/icons/svg/taskRouterIcon.svg";
 import RouterItem from "@/components/RouterItem.vue";
 import { RouteName } from "@/constants/route_name";
-import { initUtils } from "@tma.js/sdk";
+import { Utils } from "@tma.js/sdk";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const utils = initUtils();
-
+const utils = new Utils();
 </script>
 
 <template>
   <div class="navigate">
-      <RouterItem
-        :img="kitchenRouterIcon"
-        title="Kitchen"
-        text="Бронирования еды и столов"
-        @click="router.push({ name: RouteName.KITCHEN_ROOT })"
-      />
-      <RouterItem
-        :img="storeRouterIcon"
-        title="Store"
-        text="Внутренний маркетплейс"
-        @click="utils.openLink('https://concierge-store.pages.dev/')"
-      />
-      
-      <RouterItem
-        :img="taskRouterIcon"
-        title="Task"
-        text=""
-        @click="router.push({ name: RouteName.TASK_SELECT_TOPIC })"
-      />
-    </div>
+    <RouterItem
+      :img="kitchenRouterIcon"
+      title="Kitchen"
+      text="Бронирования еды и столов"
+      @click="router.push({ name: RouteName.KITCHEN_ROOT })"
+    />
+    <RouterItem
+      :img="storeRouterIcon"
+      title="Store"
+      text="Внутренний маркетплейс"
+      @click="utils.openLink('https://concierge-store.pages.dev/')"
+    />
+
+    <RouterItem
+      :img="taskRouterIcon"
+      title="Task"
+      text=""
+      @click="router.push({ name: RouteName.TASK_SELECT_TOPIC })"
+    />
+  </div>
 </template>
 
 <style scoped>
