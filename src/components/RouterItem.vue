@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-tertiary">
+  <div class="router bg-tertiary">
     <img :src="img" alt="" />
     <div class="description">
       <p class="title">{{ title }}</p>
