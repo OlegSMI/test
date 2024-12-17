@@ -24,7 +24,9 @@ const utils = new Utils();
       :img="storeRouterIcon"
       title="Store"
       text="Внутренний маркетплейс"
-      @click="utils.openTelegramLink('https://t.me/@Amelia_T07')"
+      @click="
+        utils.openTelegramLink('https://t.me/pupinionsbot/conciergestore')
+      "
     />
 
     <RouterItem

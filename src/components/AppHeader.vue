@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { retrieveLaunchParams } from "@tma.js/sdk";
 import AyaIcon from "@/components/icons/aya.vue";
+import UIAvatar from "@/components/ui/UIAvatar/UIAvatar.vue";
+import { RouteName } from "@/constants/route_name";
+import { useUserStore } from "@/store/user";
+import { retrieveLaunchParams } from "@tma.js/sdk";
+import { toRefs } from "vue";
+import { useRouter } from "vue-router";
 
 const { initData } = retrieveLaunchParams();
-import { toRefs } from "vue";
-import { useUserStore } from "@/store/user";
-import UIAvatar from "@/components/ui/UIAvatar/UIAvatar.vue";
-import { useRouter } from "vue-router";
-import { RouteName } from "@/constants/route_name";
+console.log(initData);
 
 const router = useRouter();
 const { user, hasAccessCount } = toRefs(useUserStore());
