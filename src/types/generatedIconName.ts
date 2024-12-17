@@ -1,0 +1,1 @@
+export type TGeneratedIconName = "add" | "aya" | "check" | "cross-filled" | "cross" | "eat" | "edit" | "error" | "minus" | "spinner" | "trashcan"| string

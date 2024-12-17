@@ -1,0 +1,16 @@
+export enum RouteName {
+  ACCESS = "access",
+  NOT_ACCESS = "not-access",
+  BIRTHDAY = "birthday",
+  SELECT_FEATURE = "select-feature",
+  KITCHEN_ROOT = "kitchen-root",
+  KITCHEN_HOME = "kitchen-home",
+  KITCHEN_ONBOARD = "kitchen-onboard",
+  KITCHEN_PRODUCT_ID = "kitchen-product-id",
+  KITCHEN_CART = "kitchen-cart",
+  KITCHEN_CART_CHECKOUT = "kitchen-cart-checkout",
+  KITCHEN_CART_CONFIRM = "kitchen-cart-confirm",
+  KITCHEN_ORDER_ID = "kitchen-order-id",
+  TASK_SELECT_TOPIC = "task-select-topic",
+  TASK_MESSAGE = "task-message",
+}

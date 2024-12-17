@@ -1,0 +1,31 @@
+stages:
+  - build
+  - clearing
+
+build-develop:
+  stage: build
+  tags:
+    - shell
+    - ayagroup
+    - test
+  allow_failure: false
+  script:
+    - rm -rf /var/www/aya.concierge/frontend/*
+    - rsync -r ./* /var/www/aya.concierge/frontend/
+    - docker-compose -f /var/www/aya.concierge/docker-compose.yml build --no-cache frontend
+    - docker-compose -f /var/www/aya.concierge/docker-compose.yml up -d frontend
+  only:
+    - dev
+
+
+clearing-develop:
+  stage: clearing
+  tags:
+    - shell
+    - ayagroup
+    - test
+  when: on_success
+  script:
+    - docker image prune -f
+  only:
+    - dev
