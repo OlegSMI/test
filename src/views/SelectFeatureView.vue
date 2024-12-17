@@ -8,42 +8,30 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const routerItems = [
-  {
-    img: kitchenRouterIcon,
-    title: "Kitchen",
-    text: "Бронирования еды и столов",
-    route: router.push({ name: RouteName.KITCHEN_ROOT }),
-  },
-  {
-    img: storeRouterIcon,
-    title: "Store",
-    text: "Внутренний маркетплейс",
-    route: window.open('https://concierge-store.pages.dev/', '_blank'),
-  },
-  {
-    img: taskRouterIcon,
-    title: "Task",
-    text: "",
-    route: router.push({ name: RouteName.TASK_SELECT_TOPIC }),
-  },
 
-];
 </script>
 
 <template>
   <div class="navigate">
-    <div v-for="item in routerItems">
       <RouterItem
-        v-if="!item.mode"
-        :key="item.title"
-        :img="item.img"
-        :title="item.title"
-        :text="item.text"
-        @click="item.route"
+        :img="kitchenRouterIcon"
+        title="Kitchen"
+        text="Бронирования еды и столов"
+        @click="router.push({ name: RouteName.KITCHEN_ROOT })"
+      />
+      <RouterItem
+        :img="storeRouterIcon"
+        title="Store"
+        text="Внутренний маркетплейс"
+        @click="window.open('https://concierge-store.pages.dev/', '_blank')"
+      />
+      <RouterItem
+        :img="taskRouterIcon"
+        title="Task"
+        text=""
+        @click="router.push({ name: RouteName.TASK_SELECT_TOPIC })"
       />
     </div>
-  </div>
 </template>
 
 <style scoped>
