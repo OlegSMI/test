@@ -57,9 +57,9 @@ const isInitDataFinished = computed(() => {
 });
 onBeforeMount(() => {});
 watchEffect(() => {
-  if (isInitDataFinished.value && !isReady.value) {
-    isReady.value = true;
-    if (route.fullPath.includes("#tg")) {
+  // if (isInitDataFinished.value && !isReady.value) {
+  //   isReady.value = true;
+    // if (route.fullPath.includes("#tg")) {
       // if (hasAccessCount.value === 0) {
       //   void router.push({ name: RouteName.NOT_ACCESS }).then(() => {
       //     setTimeout(() => {
@@ -67,37 +67,37 @@ watchEffect(() => {
       //     }, 300);
       //   });
       // } else 
-      if (showBirthdayOnboard.value) {
-        void router.push({ name: RouteName.BIRTHDAY }).then(() => {
-          setTimeout(() => {
-            appStore.setReady(true);
-          }, 300);
-        });
-      } else if (hasAccessCount.value === 1 && hasKitchenAccess.value) {
+      // if (showBirthdayOnboard.value) {
+      //   void router.push({ name: RouteName.BIRTHDAY }).then(() => {
+      //     setTimeout(() => {
+      //       appStore.setReady(true);
+      //     }, 300);
+      //   });
+      // } else if (hasAccessCount.value === 1 && hasKitchenAccess.value) {
         void router.push({ name: RouteName.KITCHEN_ROOT }).then(() => {
           setTimeout(() => {
             appStore.setReady(true);
           }, 300);
         });
-      } else if (hasAccessCount.value === 1 && hasTaskAccess.value) {
-        void router.push({ name: RouteName.TASK_SELECT_TOPIC }).then(() => {
-          setTimeout(() => {
-            appStore.setReady(true);
-          }, 300);
-        });
-      } else if (hasAccessCount.value > 1) {
-        void router.push({ name: RouteName.SELECT_FEATURE }).then(() => {
-          setTimeout(() => {
-            appStore.setReady(true);
-          }, 300);
-        });
-      }
-    } else {
-      setTimeout(() => {
-        appStore.setReady(true);
-      }, 300);
-    }
-  }
+  //     } else if (hasAccessCount.value === 1 && hasTaskAccess.value) {
+  //       void router.push({ name: RouteName.TASK_SELECT_TOPIC }).then(() => {
+  //         setTimeout(() => {
+  //           appStore.setReady(true);
+  //         }, 300);
+  //       });
+  //     } else if (hasAccessCount.value > 1) {
+  //       void router.push({ name: RouteName.SELECT_FEATURE }).then(() => {
+  //         setTimeout(() => {
+  //           appStore.setReady(true);
+  //         }, 300);
+  //       });
+  //     }
+  //   } else {
+  //     setTimeout(() => {
+  //       appStore.setReady(true);
+  //     }, 300);
+  //   }
+  // }
 });
 </script>
 
