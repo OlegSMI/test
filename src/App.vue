@@ -74,23 +74,23 @@ watchEffect(() => {
       //     }, 300);
       //   });
       // } else if (hasAccessCount.value === 1 && hasKitchenAccess.value) {
-        void router.push({ name: RouteName.KITCHEN_ROOT }).then(() => {
+        // void router.push({ name: RouteName.KITCHEN_ROOT }).then(() => {
+        //   setTimeout(() => {
+        //     appStore.setReady(true);
+        //   }, 300);
+        // });
+  //     } else if (hasAccessCount.value === 1 && hasTaskAccess.value) {
+        // void router.push({ name: RouteName.TASK_SELECT_TOPIC }).then(() => {
+        //   setTimeout(() => {
+        //     appStore.setReady(true);
+        //   }, 300);
+        // });
+  //     } else if (hasAccessCount.value > 1) {
+        void router.push({ name: RouteName.SELECT_FEATURE }).then(() => {
           setTimeout(() => {
             appStore.setReady(true);
           }, 300);
         });
-  //     } else if (hasAccessCount.value === 1 && hasTaskAccess.value) {
-  //       void router.push({ name: RouteName.TASK_SELECT_TOPIC }).then(() => {
-  //         setTimeout(() => {
-  //           appStore.setReady(true);
-  //         }, 300);
-  //       });
-  //     } else if (hasAccessCount.value > 1) {
-  //       void router.push({ name: RouteName.SELECT_FEATURE }).then(() => {
-  //         setTimeout(() => {
-  //           appStore.setReady(true);
-  //         }, 300);
-  //       });
   //     }
   //   } else {
   //     setTimeout(() => {
