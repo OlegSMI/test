@@ -96,6 +96,7 @@ const { pressed: isPressed } = useMousePressed({
             <li @click="utils.openTelegramLink('https://t.me/@Sidney_91')">
               Sidney
             </li>
+<li @click="utils.openTelegramLink('https://t.me/pupinionsbot/conciergestore')">test</li>
           </ul>
         </div>
       </div>
